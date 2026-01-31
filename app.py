@@ -18,10 +18,10 @@ st.set_page_config(
 # ---------------- LOAD MODELS (NO STREAMLIT CACHE) ----------------
 def load_models():
     cnn = load_model("models/cnn_model_clean.h5", compile=False)  # FIXED
-    svm = joblib.load("models/svm_model.pkl")
-    rf = joblib.load("models/rf_model.pkl")
-    scaler = joblib.load("models/feature_scaler.pkl")
-    encoder = joblib.load("models/severity_encoder.pkl")
+    svm = joblib.load("models/svm_model_clean.pkl")
+    rf = joblib.load("models/rf_model_clean.pkl")
+    scaler = joblib.load("models/feature_scaler_clean.pkl")
+    encoder = joblib.load("models/severity_encoder_clean.pkl")
     return cnn, svm, rf, scaler, encoder
 
 cnn_model, svm_model, rf_model, scaler, severity_encoder = load_models()
